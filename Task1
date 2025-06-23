@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+df = pd.read_csv('states_population_income.csv') #read the file
+
+
+print(df.head()) # To print the data
+print(df.info()) # info about the data type
+
+
+
+# Steps to Plot the bar chart
+plt.figure(figsize=(12, 8))
+plt.bar(df['Code'], df['2011- POP'], color='skyblue')
+
+plt.ylabel('Population')
+plt.xlabel('States & Union Territories')
+plt.title('Population of States & Union Territories in india',fontsize=30,color='red')
+plt.gca().invert_xaxis() 
+plt.tight_layout()
+plt.show()
